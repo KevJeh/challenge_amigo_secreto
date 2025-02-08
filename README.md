@@ -59,9 +59,6 @@ amigo-secreto/
 ├── index.html # Archivo principal HTML
 ├── style.css # Estilos CSS
 └── app.js # Lógica JavaScript
-
-Copy
-
 ---
 
 ## Personalización 🎨
