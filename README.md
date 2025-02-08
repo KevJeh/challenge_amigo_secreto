@@ -100,7 +100,7 @@ Licencia 📄
 Este proyecto está bajo la licencia MIT. Para más detalles, consulta el archivo LICENSE.
 
 Créditos 🙏
-Sonido mágico: SoundJay.
+Sonido mágico: Pixabay.
 
 Fuentes: Google Fonts.
 
