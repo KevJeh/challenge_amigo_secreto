@@ -1,6 +1,6 @@
 # Amigo Secreto 🎁✨
 
-¡Bienvenido al proyecto **Amigo Secreto**! Esta es una aplicación web divertida y fácil de usar para organizar un sorteo de "Amigo Secreto" o "Secret Santa". Con una interfaz amigable y características mágicas, esta herramienta te ayudará a asignar amigos secretos de manera justa y emocionante.
+¿Listo para organizar un sorteo de Amigo Secreto o Secret Santa de manera fácil y divertida? ¡Has llegado al lugar correcto! Esta aplicación web está diseñada para que puedas asignar amigos secretos de forma justa, rápida y con un toque de diversion.
 
 ---
 
@@ -10,8 +10,8 @@
 - **Eliminar amigos**: Elimina a cualquier amigo de la lista en caso de errores.
 - **Sortear amigos**: Realiza un sorteo aleatorio para asignar amigos secretos, asegurando que nadie sea asignado a sí mismo.
 - **Mostrar/ocultar amigo secreto**: Cada amigo puede ver su amigo secreto haciendo clic en un botón de "ojo" (👁️), manteniendo la privacidad del sorteo.
-- **Diseño mágico**: Colores vibrantes y animaciones que dan un toque especial a la experiencia.
-- **Sonido de sorteo**: Un sonido mágico se reproduce al realizar el sorteo para hacerlo más emocionante.
+- **Diseño amigable**: Colores vibrantes y animaciones que dan un toque especial a la experiencia.
+- **Sonido de sorteo**: Un sonido divertido se reproduce al realizar el sorteo para hacerlo más emocionante.
 
 ---
 
@@ -31,12 +31,12 @@
 
 3. **Sortear amigos**:
    - Una vez que hayas agregado al menos 2 amigos, haz clic en "Sortear amigo".
-   - Se reproducirá un sonido mágico y se realizará el sorteo.
+   - Se reproducirá un sonido de trompetas y se realizará el sorteo.
 
 4. **Mostrar/ocultar amigo secreto**:
    - Después del sorteo, cada amigo tendrá un botón de "ojo" (👁️) junto a su nombre.
    - Haz clic en el botón para ver quién es tu amigo secreto.
-   - Haz clic nuevamente para ocultar el mensaje y mantener la privacidad.
+   - Haz clic nuevamente para ocultar el mensaje y mantener la privacidad para continuar con la visualizacion de los amigos secretos. 
 
 ---
 
