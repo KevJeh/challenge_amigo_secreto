@@ -1,0 +1,259 @@
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+}
+
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.input-name {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+/* Botones */
+button {
+    padding: 12px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-add {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+/* Lista de amigos */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Elemento de lista */
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-white);
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+ul li:hover {
+    transform: scale(1.02);
+}
+
+/* Botón de eliminar */
+.button-remove {
+    background-color: var(--color-delete);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+}
+
+.button-remove:hover {
+    background-color: darkred;
+}
+
+/* Resultado del sorteo */
+.result-list {
+    margin-top: 15px;
+    color: #05DF05;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+/* Botón de sortear */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 12px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+}
+
+
+/* Estilos generales */
+:root {
+    --color-primary: #6A1B9A; /* Morado mágico */
+    --color-secondary: #F3E5F5; /* Morado claro */
+    --color-tertiary: #E1BEE7; /* Morado pastel */
+    --color-button: #AB47BC; /* Morado vibrante */
+    --color-button-hover: #8E24AA; /* Morado oscuro */
+    --color-text: #4A148C; /* Morado oscuro para texto */
+    --color-white: #FFFFFF;
+    --color-delete: #FF5252; /* Rojo para eliminar */
+    --color-magic: #FFD700; /* Dorado para efectos mágicos */
+    --color-magic-shadow: rgba(255, 215, 0, 0.5);
+}
+
+/* Animación mágica */
+@keyframes magicGlow {
+    0% { box-shadow: 0 0 10px var(--color-magic-shadow); }
+    50% { box-shadow: 0 0 20px var(--color-magic); }
+    100% { box-shadow: 0 0 10px var(--color-magic-shadow); }
+}
+
+/* Estilos para el mensaje de amigo secreto */
+.mensaje-amigo-secreto {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    animation: magicGlow 2s infinite;
+    margin-top: 10px;
+    display: none; /* Oculto por defecto */
+}
+
+/* Estilos para el botón de ojo */
+.button-eye {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    color: var(--color-button);
+}
+
+.button-eye:hover {
+    color: var(--color-button-hover);
+}
+
+/* Estilos para el botón de eliminar */
+.button-remove {
+    background-color: var(--color-delete);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-remove:hover {
+    background-color: darkred;
+}
+
+/* Estilos para el botón de sortear */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 12px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.button-draw img {
+    margin-right: 10px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
