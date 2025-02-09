@@ -34,7 +34,7 @@ function actualizarListaAmigos() {
             <li>
                 ${amigo}
                 <button class="button-remove" onclick="eliminarAmigo('${amigo}')">Eliminar</button>
-                <button class="button-eye" onclick="mostrarOcultarAmigoSecreto('${amigo}')">👁️</button>
+                <button class="button-eye" onclick="mostrarOcultarAmigoSecreto('${amigo}')">👁️ Mostrar amigo secreto</button>
                 <div class="mensaje-amigo-secreto" id="mensaje-${amigo}"></div>
             </li>`;
     });
