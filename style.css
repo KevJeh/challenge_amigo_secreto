@@ -1,278 +1,287 @@
 /* Variables de colores */
 :root {
-    --color-primary: #6A1B9A; /* Morado mágico */
-    --color-secondary: #F3E5F5; /* Morado claro */
-    --color-tertiary: #E1BEE7; /* Morado pastel */
-    --color-button: #AB47BC; /* Morado vibrante */
-    --color-button-hover: #8E24AA; /* Morado oscuro */
-    --color-text: #4A148C; /* Morado oscuro para texto */
-    --color-white: #FFFFFF;
-    --color-delete: #FF5252; /* Rojo para eliminar */
-    --color-magic: #FFD700; /* Dorado para efectos mágicos */
-    --color-magic-shadow: rgba(255, 215, 0, 0.5);
-}
-
-/* Estilos generales */
-* {
+    --color-primary: #4A00E0; /* Azul violáceo */
+    --color-secondary: #8E2DE2; /* Morado vibrante */
+    --color-tertiary: #FF4081;  /* Rosa acento */
+    --color-button: #FF4081;    /* Rosa acento */
+    --color-button-hover: #E73370; /* Rosa oscura */
+    --color-text: #ffffff;      /* Texto blanco */
+    --color-white: #ffffff;
+    --color-delete: #FF5252;    /* Rojo para eliminar */
+    --color-magic: #FFD740;     /* Amarillo para efecto mágico */
+    --color-magic-shadow: rgba(255, 215, 0, 0.6);
+  }
+  
+  /* Estilos globales */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    background-color: var(--color-primary);
+  }
+  
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Inter", sans-serif;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    padding: 20px;
+  }
+  
+  /* Contenedor principal */
+  .main-content {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px; /* Añadimos padding para evitar que el contenido toque los bordes */
-}
-
-/* Banner */
-.header-banner {
-    flex: 1;
-    display: flex;
-    flex-direction: column; /* Cambiamos a columna para móviles */
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.header-banner img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px; /* Espacio entre el título y la imagen */
-}
-
-/* Títulos */
-.main-title {
-    font-size: 2.5rem; /* Tamaño base para pantallas grandes */
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
+  }
+  
+  /* Banner */
+  .header-banner {
     text-align: center;
-    margin: 0 20px; /* Margen lateral para evitar que el texto toque los bordes */
-}
-
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
-
-/* Sección de entrada */
-.input-section {
-    flex: 2;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+  }
+  
+  .header-banner img {
+    max-width: 300px;
     width: 100%;
-}
-
-/* Contenedores de entrada y botón */
-.input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
     margin-top: 20px;
-}
-
-.input-name {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 1rem;
-}
-
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-add:hover {
-    background-color: #a1a1a1;
-}
-
-/* Lista de amigos */
-.name-list {
-    list-style-type: none;
-    color: var(--color-text);
-    font-size: 1rem;
-    margin: 20px 0;
-    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Sección de entrada (efecto glassmorphism) */
+  .input-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 600px;
-}
-
-.name-list li {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input y botón de agregar */
+  .input-wrapper {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .input-name {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .button-add {
+    padding: 15px 25px;
+    border: none;
+    background: var(--color-tertiary);
+    color: var(--color-white);
+    font-size: 1rem;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .button-add:hover {
+    background: var(--color-button-hover);
+    transform: scale(1.05);
+  }
+  
+  /* Lista de amigos */
+  .name-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .name-list li {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, opacity 0.5s;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .name-list li:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Contenedor para el nombre y botones */
+  .nombre-botones {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-white);
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.name-list li:hover {
-    transform: scale(1.02);
-}
-
-/* Botones */
-.button-remove, .button-eye {
-    background-color: var(--color-delete);
-    color: var(--color-white);
+    flex-wrap: wrap;
+  }
+  
+  .nombre-botones span {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* Botones de cada elemento */
+  .button-remove,
+  .button-eye {
     border: none;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 0.875rem;
+    border-radius: 5px;
+    padding: 8px 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-remove:hover {
-    background-color: darkred;
-}
-
-.button-eye {
-    background-color: transparent;
-    color: var(--color-button);
-    font-size: 1.25rem;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 0.9rem;
+  }
+  
+  .button-remove {
+    background: var(--color-delete);
+    color: var(--color-white);
+  }
+  
+  .button-remove:hover {
+    background: darkred;
+    transform: scale(1.05);
+  }
+  
+  .button-eye {
+    background: var(--color-primary);
+    color: var(--color-white);
     margin-left: 10px;
-}
-
-.button-eye:hover {
-    color: var(--color-button-hover);
-}
-
-/* Botón de sortear */
-.button-draw {
-    display: flex;
+  }
+  
+  .button-eye:hover {
+    background: var(--color-secondary);
+    transform: scale(1.05);
+  }
+  
+  /* Mensaje de amigo secreto */
+  /* El contenedor se oculta con opacity y max-height para efecto de deslizamiento */
+  .mensaje-container {
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+  
+  .mensaje-container.active {
+    opacity: 1;
+    max-height: 200px;
+  }
+  
+  .mensaje-amigo-secreto {
+    background: var(--color-white);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    animation: magicGlow 2s infinite;
+    text-align: center;
+  }
+  
+  /* Botón de sortear */
+  .button-draw {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 1rem;
+    padding: 15px 30px;
+    background: var(--color-primary);
     border: none;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color: var(--color-white);
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-draw img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  .button-draw:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+  
+  .button-draw img {
     margin-right: 10px;
-}
-
-.button-draw:hover {
-    background-color: var(--color-button-hover);
-}
-
-/* Mensaje de amigo secreto */
-.mensaje-amigo-secreto {
-    background-color: var(--color-white);
-    color: var(--color-text);
-    padding: 15px 20px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    animation: magicGlow 2s infinite;
-    margin-top: 10px;
-    display: none;
-}
-
-/* Animación mágica */
-@keyframes magicGlow {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes magicGlow {
     0% { box-shadow: 0 0 10px var(--color-magic-shadow); }
     50% { box-shadow: 0 0 20px var(--color-magic); }
     100% { box-shadow: 0 0 10px var(--color-magic-shadow); }
-}
-
-/* Media Queries para Responsive Design */
-@media (max-width: 768px) {
+  }
+  
+  /* Media Queries para dispositivos pequeños */
+  @media (max-width: 768px) {
     .main-title {
-        font-size: 2rem; /* Reducimos el tamaño para tablets */
+      font-size: 2.5rem;
     }
-
     .section-title {
-        font-size: 1.25rem;
+      font-size: 1.5rem;
     }
-
     .input-name, .button-add {
-        font-size: 0.875rem;
+      font-size: 0.95rem;
     }
-
-    .name-list li {
-        font-size: 0.875rem;
-    }
-
     .button-draw {
-        font-size: 0.875rem;
-        padding: 10px 20px;
+      font-size: 1rem;
+      padding: 12px 25px;
     }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     .main-title {
-        font-size: 1.5rem; /* Tamaño más pequeño para móviles */
-        margin: 0 10px; /* Menos margen en pantallas muy pequeñas */
+      font-size: 2rem;
     }
-
-    .section-title {
-        font-size: 1rem;
-    }
-
     .input-wrapper {
-        flex-direction: column;
+      flex-direction: column;
     }
-
     .input-name {
-        border-radius: 25px;
-        margin-bottom: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
-
     .button-add {
-        border-radius: 25px;
+      border-radius: 10px;
     }
-
-    .name-list li {
-        flex-direction: column;
-        align-items: flex-start;
+    .nombre-botones {
+      flex-direction: column;
+      align-items: flex-start;
     }
-
     .button-remove, .button-eye {
-        margin-top: 10px;
+      margin-top: 10px;
     }
-}
+  }
+  
