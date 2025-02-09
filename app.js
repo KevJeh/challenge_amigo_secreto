@@ -3,15 +3,15 @@ let listaAmigos = [];
 let emparejamientos = new Map();
 let sorteoRealizado = false;
 
-// Variables para controlar el mensaje visible de amigo secreto
-let activeTimeout = null;
-let activeFriend = null;
-let activeButton = null;
+// Variables para controlar el mensaje visible del amigo secreto
+let tiempoActivo = null;
+let amigoActivo = null;
+let botónActivo = null;
 
 // Agrega un amigo a la lista (previene nombres vacíos o duplicados)
 function agregarAmigo() {
   const input = document.getElementById("amigo");
-  const nombre = input.value.trim();
+  const nombre = input.value.trim();//trim() remueve los espacios en blanco. 
   if (nombre === "") {
     alert("Por favor, inserte un nombre.");
     return;
@@ -27,13 +27,13 @@ function agregarAmigo() {
 
 // Elimina un amigo y refresca la lista; además, limpia el sorteo si se modifica la lista
 function eliminarAmigo(nombre) {
-  const index = listaAmigos.indexOf(nombre);
-  if (index !== -1) {
-    listaAmigos.splice(index, 1);
+  const indice = listaAmigos.indexOf(nombre);
+  if (indice !== -1) {
+    listaAmigos.splice(indice, 1);
   }
   // Si se estaba mostrando el mensaje de este amigo, se oculta
-  if (activeFriend === nombre) {
-    hideSecretMessage(nombre, activeButton);
+  if (amigoActivo === nombre) {
+    ocultarMensajeAmigoSecreto(nombre, botónActivo);
   }
   actualizarListaAmigos();
   sorteoRealizado = false;
@@ -42,15 +42,15 @@ function eliminarAmigo(nombre) {
 
 // Actualiza la lista en el DOM
 function actualizarListaAmigos() {
-  let listaAmigosHTML = "";
+  let listaHTML = "";
   listaAmigos.forEach((amigo) => {
-    listaAmigosHTML += `
+    listaHTML += `
       <li>
         <div class="nombre-botones">
           <span>${amigo}</span>
           <div>
             <button class="button-remove" onclick="eliminarAmigo('${amigo}')">Eliminar</button>
-            <button class="button-eye" onclick="toggleSecretFriend('${amigo}', this)">Mostrar amigo secreto</button>
+            <button class="button-eye" onclick="alternarAmigoSecreto('${amigo}', this)">Mostrar amigo secreto</button>
           </div>
         </div>
         <div class="mensaje-container" id="mensaje-${amigo}">
@@ -58,58 +58,58 @@ function actualizarListaAmigos() {
         </div>
       </li>`;
   });
-  document.getElementById("listaAmigos").innerHTML = listaAmigosHTML;
+  document.getElementById("listaAmigos").innerHTML = listaHTML;
 }
 
-// Muestra u oculta el mensaje del amigo secreto de forma temporal.
+// Alterna la visualización del mensaje del amigo secreto de forma temporal.
 // Si hay un mensaje activo de otro amigo, se oculta antes de mostrar el nuevo.
-function toggleSecretFriend(amigo, boton) {
+function alternarAmigoSecreto(amigo, botón) {
   if (!sorteoRealizado) {
     alert("Primero realice el sorteo.");
     return;
   }
   
   // Si hay otro mensaje activo, lo oculta
-  if (activeFriend && activeFriend !== amigo) {
-    hideSecretMessage(activeFriend, activeButton);
+  if (amigoActivo && amigoActivo !== amigo) {
+    ocultarMensajeAmigoSecreto(amigoActivo, botónActivo);
   }
   
-  const mensajeContainer = document.getElementById(`mensaje-${amigo}`);
-  const mensajeDiv = mensajeContainer.querySelector(".mensaje-amigo-secreto");
+  const contenedorMensaje = document.getElementById(`mensaje-${amigo}`);
+  const divMensaje = contenedorMensaje.querySelector(".mensaje-amigo-secreto");
   
-  if (mensajeContainer.classList.contains("active")) {
+  if (contenedorMensaje.classList.contains("active")) {
     // Si el mensaje ya se está mostrando, se oculta
-    hideSecretMessage(amigo, boton);
+    ocultarMensajeAmigoSecreto(amigo, botón);
   } else {
     const amigoSecreto = emparejamientos.get(amigo);
     if (!amigoSecreto) {
       alert("No se encontró un amigo secreto para este nombre.");
       return;
     }
-    mensajeDiv.textContent = `${amigo}, tu amigo secreto es ${amigoSecreto}. ¡Guarda el secreto! 😉`;
-    mensajeContainer.classList.add("active");
-    boton.textContent = "Ocultar amigo secreto";
-    activeFriend = amigo;
-    activeButton = boton;
+    divMensaje.textContent = `${amigo}, tu amigo secreto es ${amigoSecreto}. ¡Guarda el secreto! 😉`;
+    contenedorMensaje.classList.add("active");
+    botón.textContent = "Ocultar amigo secreto";
+    amigoActivo = amigo;
+    botónActivo = botón;
     // Oculta el mensaje automáticamente después de 5 segundos
-    activeTimeout = setTimeout(() => {
-      hideSecretMessage(amigo, boton);
-    }, 5000);
+    tiempoActivo = setTimeout(() => {
+      ocultarMensajeAmigoSecreto(amigo, botón);
+    }, 3000);
   }
 }
 
-// Función auxiliar para ocultar el mensaje de un amigo secreto
-function hideSecretMessage(amigo, boton) {
-  const mensajeContainer = document.getElementById(`mensaje-${amigo}`);
-  mensajeContainer.classList.remove("active");
-  if (boton) {
-    boton.textContent = "Mostrar amigo secreto";
+// Función auxiliar para ocultar el mensaje del amigo secreto
+function ocultarMensajeAmigoSecreto(amigo, botón) {
+  const contenedorMensaje = document.getElementById(`mensaje-${amigo}`);
+  contenedorMensaje.classList.remove("active");
+  if (botón) {
+    botón.textContent = "Mostrar amigo secreto";
   }
-  activeFriend = null;
-  activeButton = null;
-  if (activeTimeout) {
-    clearTimeout(activeTimeout);
-    activeTimeout = null;
+  amigoActivo = null;
+  botónActivo = null;
+  if (tiempoActivo) {
+    clearTimeout(tiempoActivo);
+    tiempoActivo = null;
   }
 }
 
